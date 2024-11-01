@@ -8,12 +8,17 @@ body {
 header {
   border-bottom: solid 2px rgb(136, 15, 15);
   padding: 10px;
-  margin: 20;
+  padding-left: 565px;
+  border-radius: 15px;
+  margin: 20px;
   font-size: 35px;
   color: rgb(136, 15, 15);
 }
 
 .chamada {
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 10px;
   background: #443d59;
   padding-bottom: 75px;
   padding-top: 75px;
@@ -29,8 +34,14 @@ h1 {
   font-size: 35px;
 }
 
-p {
+h3 {
   font-size: 20px;
+  color: rgb(29, 27, 27);
+}
+
+.tags {
+  font-size: 20px;
+  color: rgb(70, 190, 190);
 }
 
 img {
@@ -52,13 +63,45 @@ img {
 .categoria-videos img {
   opacity: 0.7;
   height: 150px;
+  border-radius: 10px;
 }
 
 .categoria-videos img:hover {
   opacity: 1;
   border: 2px solid blue;
+  border-radius: 10px;
 }
 
 .categoria h2 {
   color: rgb(136, 15, 15);
+}
+
+iframe {
+  border-radius: 10px;
+}
+
+.chamada-hqs {
+  border-radius: 10px;
+  background: #443d59;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  justify-content: center;
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #7030a0; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #7030a0; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 100px solid gray; /* creates padding around scroll thumb */
 }
