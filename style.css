@@ -1,6 +1,12 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   color: #b9b0b6;
-  background-color: #7030a0;
+  background-color: #6a5294ff;
   font-family: "Bebas Neue", sans-serif;
   margin-bottom: 50px;
 }
@@ -8,22 +14,47 @@ body {
 header {
   border-bottom: solid 2px rgb(136, 15, 15);
   padding: 10px;
-  padding-left: 565px;
+  text-align: center;
   border-radius: 15px;
   margin: 20px;
   font-size: 35px;
   color: rgb(136, 15, 15);
 }
 
-.chamada {
-  margin-left: 15px;
-  margin-right: 15px;
-  border-radius: 10px;
-  background: #443d59;
-  padding-bottom: 75px;
-  padding-top: 75px;
+.btn {
+  display: inline-block;
+  padding: 15px 60px;
+  font-size: 1.1rem;
+  background: #111;
+  text-transform: uppercase;
+  color: #eee;
+  border-radius: 5px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+.chamada,
+.chamada-hqs {
+  margin: 15px;
+  border-radius: 10px;
+  background: rgb(83, 73, 100);
+  padding: 75px 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chamada iframe {
+  border-radius: 10px;
+  width: 600px;
+  max-width: 100%;
+  height: 350px;
+}
+
+.chamada-hqs iframe {
+  border-radius: 10px;
+  width: 600px;
+  max-width: 100%;
+  height: 350px;
 }
 
 .chamada-texto {
@@ -42,27 +73,35 @@ h3 {
 .tags {
   font-size: 20px;
   color: rgb(70, 190, 190);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 img {
   height: 200px;
+  width: 100%;
+  max-width: 250px;
 }
 
 .categoria-videos {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   overflow-x: auto;
   gap: 8px;
+  justify-content: center;
 }
 
 .categoria {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 0 15px;
   margin-top: 25px;
 }
 
 .categoria-videos img {
   opacity: 0.7;
   height: 150px;
+  width: auto;
   border-radius: 10px;
 }
 
@@ -74,34 +113,165 @@ img {
 
 .categoria h2 {
   color: rgb(136, 15, 15);
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 iframe {
   border-radius: 10px;
-}
-
-.chamada-hqs {
-  border-radius: 10px;
-  background: #443d59;
-  padding-bottom: 60px;
-  padding-top: 60px;
-  display: flex;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  justify-content: center;
+  width: 100%;
+  max-width: 1000px; /* Aumenta o tamanho máximo do vídeo */
+  height: auto;
 }
 
 body::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
+  width: 12px;
 }
 
 body::-webkit-scrollbar-track {
-  background: #7030a0; /* color of the tracking area */
+  background: #7030a0;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #7030a0; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 100px solid gray; /* creates padding around scroll thumb */
+  background-color: #7030a0;
+  border-radius: 20px;
+  border: 100px solid gray;
+}
+
+.video-anime {
+  width: 100px;
+}
+
+/* Responsividade */
+
+/* Telas pequenas (smartphones) */
+@media (max-width: 600px) {
+  .btn {
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
+
+  header {
+    font-size: 25px;
+    margin: 10px;
+    padding: 5px;
+  }
+
+  .chamada iframe {
+    width: 100%;
+    height: 200%;
+  }
+
+  .chamada-hqs iframe {
+    width: 100%;
+    height: 200%;
+  }
+
+  .chamada,
+  .chamada-hqs {
+    padding: 50px 10px;
+    flex-direction: column;
+  }
+
+  .chamada-texto {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .categoria-videos {
+    gap: 4px;
+    justify-content: center;
+  }
+
+  img {
+    height: 120px;
+    max-width: 100%;
+  }
+
+  iframe {
+    max-width: 100%;
+  }
+}
+
+/* Telas médias (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .btn {
+    padding: 12px 50px;
+    font-size: 1rem;
+  }
+
+  header {
+    font-size: 30px;
+    padding: 8px;
+  }
+
+  .chamada,
+  .chamada-hqs {
+    padding: 60px 15px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  img {
+    height: 180px;
+  }
+
+  iframe {
+    max-width: 800px;
+  }
+
+  .tags {
+    font-size: 18px;
+  }
+}
+
+/* Telas grandes (desktops) */
+@media (min-width: 1025px) {
+  .btn {
+    padding: 15px 60px;
+    font-size: 1.1rem;
+  }
+
+  header {
+    font-size: 35px;
+  }
+
+  .chamada,
+  .chamada-hqs {
+    padding: 75px 15px;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  img {
+    height: 200px;
+  }
+
+  iframe {
+    max-width: 1200px;
+  }
+
+  .tags {
+    font-size: 20px;
+  }
 }
